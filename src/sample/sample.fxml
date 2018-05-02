@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="850.0" minWidth="1200.0" prefHeight="850.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints minWidth="1.0" prefWidth="120.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="31.0" minHeight="0.0" prefHeight="31.0" valignment="TOP" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="183.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="183.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="183.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <MenuBar GridPane.columnSpan="2147483647">
+        <menus>
+          <Menu fx:id="language" mnemonicParsing="false" text="Język">
+            <items>
+              <MenuItem fx:id="langPL" mnemonicParsing="false" text="polski" />
+              <MenuItem fx:id="langEN" mnemonicParsing="false" text="angielski" />
+
+          </items>
+          </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuBar>
+      <TableView fx:id="leftTable" style="-fx-border-radius: 50;" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
+        <columns>
+            <TableColumn fx:id="leftIconColumn" minWidth="40.0" prefWidth="40.0" style="-fx-alignment: center;" text="" />
+            <TableColumn fx:id="leftNameColumn" minWidth="200.0" prefWidth="200.0" text="Nazwa" />
+            <TableColumn fx:id="leftSizeColumn" style="-fx-alignment: center;" text="Rozmiar" />
+          <TableColumn fx:id="leftDateColumn" minWidth="175.0" prefWidth="175.0" style="-fx-alignment: center;" text="Czas" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="10.0" />
+         </GridPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <TableView fx:id="rightTable" editable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-alignment: center;" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
+          <columns>
+              <TableColumn fx:id="rightIconColumn" minWidth="40.0" prefWidth="40.0" style="-fx-alignment: center;" text="" />
+              <TableColumn fx:id="rightNameColumn" minWidth="200.0" prefWidth="200.0" text="Nazwa" />
+              <TableColumn fx:id="rightSizeColumn" minWidth="80.0" prefWidth="80.0" style="-fx-alignment: center;" text="Rozmiar" />
+              <TableColumn fx:id="rightDateColumn" minWidth="175.0" prefWidth="175.0" style="-fx-alignment: center;" text="Czas" />
+          </columns>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="10.0" right="20.0" />
+         </GridPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Button fx:id="btnCopy" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#btnCopyClick" prefHeight="60.0" prefWidth="100.0" text="Kopiuj" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" top="120.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Studia/Magister/TP%20-%20aplikacje%20lokalne/JCommander/png/icons8-kopiuj-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnMove" contentDisplay="TOP" mnemonicParsing="false" onAction="#btnMoveClick" prefHeight="60.0" prefWidth="100.0" text="Przenieś" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Studia/Magister/TP%20-%20aplikacje%20lokalne/JCommander/png/icons8-prześlij-dokument-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnDelete" contentDisplay="TOP" mnemonicParsing="false" onAction="#btnDeleteClick" prefHeight="60.0" prefWidth="100.0" text="Usuń" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="120.0" left="10.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Studia/Magister/TP%20-%20aplikacje%20lokalne/JCommander/png/icons8-usuń-plik-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ComboBox fx:id="drivesIn" prefWidth="75.0" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <ComboBox fx:id="drivesOut" prefWidth="75.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Button fx:id="btnLeftBack" mnemonicParsing="false" onAction="#leftPathBack" GridPane.rowIndex="1">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets left="120.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="223.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Studia/Magister/TP%20-%20aplikacje%20lokalne/JCommander/png/icons8-góra.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnRightBack" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="120.0" />
+         </GridPane.margin>
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Studia/Magister/TP%20-%20aplikacje%20lokalne/JCommander/png/icons8-góra.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="showPathLeft" contentDisplay="RIGHT" text="Ścieżka: " GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="180.0" />
+         </GridPane.margin>
+         <graphic>
+            <Label fx:id="pthLeft" maxWidth="285.0" text="Label" />
+         </graphic>
+      </Label>
+      <Label fx:id="showPathRight" contentDisplay="RIGHT" text="Ścieżka: " GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="180.0" />
+         </GridPane.margin>
+         <graphic>
+            <Label fx:id="pthRight" contentDisplay="TOP" maxWidth="285.0" text="Label" />
+         </graphic>
+      </Label>
+   </children>
+</GridPane>
